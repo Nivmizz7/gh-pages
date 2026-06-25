@@ -1,10 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Set current year in footer
-  document.getElementById('current-year').textContent = new Date().getFullYear();
+  const currentYearEl = document.getElementById('current-year');
+  if (currentYearEl) {
+    currentYearEl.textContent = new Date().getFullYear();
+  }
 
   const frBtn = document.getElementById("fr");
   const enBtn = document.getElementById("en");
-  let currentLang = localStorage.getItem("lang") || "fr";
+  
+  let currentLang = "fr";
+  try {
+    currentLang = localStorage.getItem("lang") || "fr";
+  } catch (e) {
+    console.warn("localStorage is not available:", e);
+  }
 
   function updateTranslations() {
     const elements = document.querySelectorAll("[data-fr][data-en]");
@@ -18,28 +27,40 @@ document.addEventListener("DOMContentLoaded", () => {
   function setLang(lang) {
     currentLang = lang;
     updateTranslations();
-    frBtn.classList.toggle("active", lang === "fr");
-    enBtn.classList.toggle("active", lang === "en");
-    localStorage.setItem("lang", lang);
+    if (frBtn) frBtn.classList.toggle("active", lang === "fr");
+    if (enBtn) enBtn.classList.toggle("active", lang === "en");
+    
+    try {
+      localStorage.setItem("lang", lang);
+    } catch (e) {
+      console.warn("localStorage is not available:", e);
+    }
     
     // Re-render projects to update descriptions
     renderProjects();
   }
 
   // Initial setup
-  document.querySelector('a[href="https://github.com/Nivmizz7"]').dataset.fr = '<i class="fa-brands fa-github"></i> GitHub';
-  document.querySelector('a[href="https://github.com/Nivmizz7"]').dataset.en = '<i class="fa-brands fa-github"></i> GitHub';
+  const githubLinks = document.querySelectorAll('a[href="https://github.com/Nivmizz7"]');
+  githubLinks.forEach(link => {
+    if (link.dataset) {
+      link.dataset.fr = '<i class="fa-brands fa-github"></i> GitHub';
+      link.dataset.en = '<i class="fa-brands fa-github"></i> GitHub';
+    }
+  });
   
   setLang(currentLang);
 
-  frBtn.addEventListener("click", () => setLang("fr"));
-  enBtn.addEventListener("click", () => setLang("en"));
+  if (frBtn) frBtn.addEventListener("click", () => setLang("fr"));
+  if (enBtn) enBtn.addEventListener("click", () => setLang("en"));
 
   // Fetch GitHub Projects
   let cachedRepos = [];
 
   async function fetchGitHubRepos() {
     const projectsContainer = document.getElementById('github-projects');
+    if (!projectsContainer) return;
+
     try {
       // Fetch repos from GitHub API
       const response = await fetch('https://api.github.com/users/Nivmizz7/repos?sort=updated&per_page=10');
@@ -48,13 +69,16 @@ document.addEventListener("DOMContentLoaded", () => {
       let repos = await response.json();
       
       // Filter out profile readme repository and forks if needed
-      repos = repos.filter(repo => repo.name !== 'Nivmizz7' && !repo.fork).slice(0, 6);
-      
-      cachedRepos = repos;
-      renderProjects();
+      if (Array.isArray(repos)) {
+        repos = repos.filter(repo => repo.name !== 'Nivmizz7' && !repo.fork).slice(0, 6);
+        cachedRepos = repos;
+        renderProjects();
+      } else {
+        throw new Error('Invalid data format from GitHub API');
+      }
 
     } catch (error) {
-      console.error(error);
+      console.error("Error fetching projects:", error);
       projectsContainer.innerHTML = `<p data-fr="Impossible de charger les projets GitHub." data-en="Failed to load GitHub projects.">Impossible de charger les projets GitHub.</p>`;
       updateTranslations();
     }
@@ -62,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderProjects() {
     const projectsContainer = document.getElementById('github-projects');
-    if (cachedRepos.length === 0) return;
+    if (!projectsContainer || cachedRepos.length === 0) return;
     
     projectsContainer.innerHTML = '';
     
@@ -72,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
       projectEl.className = 'project';
       
       const langIcon = repo.language ? `<span class="tag"><i class="fa-solid fa-code"></i> ${repo.language}</span>` : '';
-      const starIcon = `<span class="tag"><i class="fa-solid fa-star" style="color: #fbbf24;"></i> ${repo.stargazers_count}</span>`;
+      const starIcon = `<span class="tag"><i class="fa-solid fa-star" style="color: #fbbf24;"></i> ${repo.stargazers_count || 0}</span>`;
       
       projectEl.innerHTML = `
         <h3><i class="fa-regular fa-folder-open"></i> ${repo.name}</h3>
