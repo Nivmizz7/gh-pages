@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -15,8 +15,8 @@
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-  <script src="assets/script.js"></script>
-  <link rel="stylesheet" href="assets/styles.css">
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -25,30 +25,25 @@
     <div class="header-container glass-panel">
       <a href="https://nivmizz7.me"><img src="assets/photo.jpg" alt="Photo de Nivmizz7" class="profile-photo"></a>
       <div class="header-info">
-        <h1 data-fr="Nivmizz7" data-en="Nivmizz7">Nivmizz7</h1>
-        <p data-fr="Développeur Web Back-end & Gestion et Maintenance de serveurs"
-          data-en="Back-end Web Developer & Server Management and Maintenance">Développeur Web Back-end & Gestion et
-          Maintenance de serveurs</p>
+        <h1>Nivmizz7</h1>
+        <p>Back-end Web Developer & Server Management and Maintenance</p>
       </div>
     </div>
 
     <nav class="nav-container">
       <ul class="nav-links">
-        <li><a href="#competences" data-fr="Compétences" data-en="Skills">Compétences</a></li>
-        <li><a href="#projets" data-fr="Projets" data-en="Projects">Projets</a></li>
-        <li><a href="https://github.com/Nivmizz7" target="_blank" data-fr="GitHub" data-en="GitHub"><i
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://github.com/Nivmizz7" target="_blank"><i
               class="fa-brands fa-github"></i> GitHub</a></li>
       </ul>
-      <div class="lang-switch">
-        <button id="fr" class="lang-btn active">FR</button>
-        <button id="en" class="lang-btn">EN</button>
-      </div>
     </nav>
   </header>
 
-  <section id="competences" class="section glass-panel">
+  <section id="skills" class="section glass-panel">
     <div class="section-header">
-      <h2 data-fr="Compétences" data-en="Skills">Compétences</h2>
+      <h2>Skills</h2>
       <div class="line"></div>
     </div>
     <div class="skills">
@@ -65,14 +60,70 @@
     </div>
   </section>
 
-  <section id="projets" class="section glass-panel">
+  <section id="projects" class="section glass-panel">
     <div class="section-header">
-      <h2 data-fr="Projets & Dépôts" data-en="Projects & Repositories">Projets & Dépôts</h2>
+      <h2>Projects & Ecosystem</h2>
       <div class="line"></div>
     </div>
     <div class="projects" id="github-projects">
-      <div class="loading-spinner"><i class="fas fa-circle-notch"></i> <span data-fr="Chargement des projets..."
-          data-en="Loading projects...">Chargement des projets...</span></div>
+      <div class="project">
+        <h3><img src="assets/tarkovtracker-org.png" alt="TarkovTracker Logo" style="width: 24px; vertical-align: middle; margin-right: 8px;"> TarkovTracker.org</h3>
+        <p>A comprehensive quest tracking and progression platform for Escape from Tarkov.</p>
+        <div class="project-tags">
+          <span class="tag"><i class="devicon-typescript-plain colored"></i> TypeScript</span>
+          <span class="tag"><i class="devicon-nuxtjs-plain colored"></i> Nuxt 4</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/TarkovTracker-org/tarkovtracker" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i> Code
+          </a>
+          <a href="https://tarkovtracker.org" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+          </a>
+        </div>
+      </div>
+      <div class="project">
+        <h3><img src="assets/tarkovtracker-org.png" alt="TarkovTracker Logo" style="width: 24px; vertical-align: middle; margin-right: 8px;"> Tarkov Data Overlay</h3>
+        <p>Overwolf app providing in-game information and integration for TarkovTracker.</p>
+        <div class="project-tags">
+          <span class="tag"><i class="devicon-json-plain colored"></i> JSON</span>
+          <span class="tag"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/TarkovTracker-org/tarkov-data-overlay" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i> Code
+          </a>
+        </div>
+      </div>
+      <div class="project">
+        <h3><img src="assets/tarkovtracker-org.png" alt="TarkovTracker Logo" style="width: 24px; vertical-align: middle; margin-right: 8px;"> TrackerBot</h3>
+        <p>Discord bot for the TarkovTracker ecosystem to track stats and updates.</p>
+        <div class="project-tags">
+          <span class="tag"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/TarkovTracker-org/trackerbot" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i> Code
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section glass-panel">
+    <div class="section-header">
+      <h2>Contact</h2>
+      <div class="line"></div>
+    </div>
+    <div class="contact-info" style="text-align: center; font-size: 1.2rem; margin-top: 20px;">
+      <p style="margin-bottom: 15px;">
+        <i class="fa-solid fa-envelope" style="color: #64748b; margin-right: 10px;"></i>
+        <a href="mailto:niv@nivmizz7.dev" style="color: var(--text-color); text-decoration: none; font-weight: 500;">niv@nivmizz7.dev</a>
+      </p>
+      <p>
+        <i class="fa-brands fa-discord" style="color: #5865F2; margin-right: 10px;"></i>
+        <a href="https://discord.gg/PpdDwd2M6V" target="_blank" rel="noopener noreferrer" style="color: var(--text-color); text-decoration: none; font-weight: 500;">Join my Discord Server</a>
+      </p>
     </div>
   </section>
 
@@ -80,8 +131,6 @@
     <p>© <span id="current-year"></span> Nivmizz7 | <a href="https://github.com/Nivmizz7" target="_blank"><i
           class="fa-brands fa-github"></i> GitHub</a></p>
   </footer>
-
-
 
 </body>
 
