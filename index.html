@@ -5,288 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nivmizz7</title>
   <link rel="icon" href="assets/photo.jpg" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-main: #050607;
-      --bg-panel: #0f1116;
-      --bg-panel-alt: #14171f;
-      --accent: #00aaff;
-      --accent-soft: rgba(0,170,255,0.35);
-      --text: #f0f0f0;
-      --text-muted: #9fa5b5;
-      --border: rgba(255,255,255,0.08);
-    }
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      font-size: 15px;
-      background: radial-gradient(circle at top, #14161c 0%, var(--bg-main) 55%);
-      color: var(--text);
-      min-height: 100vh;
-    }
-
-    /* ================= HEADER ================= */
-
-    header {
-      max-width: 1100px;
-      margin: auto;
-      padding: 3rem 2rem 2rem;
-    }
-
-    .header-container {
-      background: linear-gradient(135deg, rgba(5,6,7,0.95), rgba(10,12,18,0.9));
-      border-radius: 30px;
-      border: 1px solid var(--border);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.65);
-      padding: 2.5rem;
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .profile-photo {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 4px solid rgba(255,255,255,0.2);
-      padding: 6px;
-      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
-      box-shadow: 0 10px 35px rgba(0,0,0,0.7);
-    }
-
-    .header-info h1 {
-      margin: 0;
-      font-size: clamp(2rem, 4vw, 3rem);
-      letter-spacing: 0.05em;
-    }
-
-    .header-info p {
-      color: var(--text-muted);
-      margin-top: 0.6rem;
-      line-height: 1.8;
-    }
-
-    /* ================= NAV ================= */
-
-    .nav-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      padding-top: 1.5rem;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-      padding: 0;
-      margin: 0;
-    }
-
-    .nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-weight: 500;
-      padding: 0.45rem 1.2rem;
-      border-radius: 999px;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .nav-links a:hover {
-      background: rgba(0,170,255,0.12);
-      color: var(--text);
-    }
-
-    /* ================= LANG ================= */
-
-    .lang-switch {
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .lang-btn {
-      border: 1px solid rgba(255,255,255,0.25);
-      background: transparent;
-      color: var(--text);
-      padding: 0.35rem 0.9rem;
-      border-radius: 999px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    .lang-btn:hover {
-      background: rgba(255,255,255,0.08);
-    }
-
-    .lang-btn.active {
-      background: var(--accent);
-      color: #fff;
-      border-color: transparent;
-    }
-
-    /* ================= SECTIONS ================= */
-
-    .section {
-      padding: 3rem 2rem;
-      max-width: 1000px;
-      margin: 3rem auto;
-      text-align: center;
-      background: var(--bg-panel);
-      border-radius: 22px;
-      border: 1px solid var(--border);
-      box-shadow: 0 15px 45px rgba(0,0,0,0.4);
-    }
-
-    .section h2 {
-      margin-bottom: 2rem;
-      text-transform: uppercase;
-      letter-spacing: 0.25rem;
-      font-size: 1rem;
-    }
-
-    .section a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .section a:hover {
-      text-decoration: underline;
-    }
-
-    /* ================= SKILLS ================= */
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .skill {
-      background: var(--bg-panel-alt);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1rem 2.2rem;
-      font-weight: 600;
-      transition: transform 0.25s, box-shadow 0.25s;
-    }
-
-    .skill:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    }
-
-    /* ================= PROJECTS ================= */
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .project {
-      background: var(--bg-panel-alt);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 1.5rem;
-      text-align: left;
-      transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
-    }
-
-    .project:hover {
-      transform: translateY(-5px);
-      border-color: var(--accent-soft);
-      box-shadow: 0 12px 35px rgba(0,0,0,0.45);
-    }
-
-    .project h3 {
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-
-    .project p {
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    /* ================= FOOTER ================= */
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem 3rem;
-      color: #6d7285;
-      font-size: 0.85rem;
-    }
-
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* ================= MOBILE ================= */
-
-    @media (max-width: 600px) {
-      header {
-        padding: 2rem 1rem;
-      }
-
-      .header-container {
-        padding: 2rem 1.5rem;
-      }
-
-      .profile-photo {
-        margin: auto;
-      }
-
-      .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .nav-container {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .section {
-        margin: 2rem 1rem;
-        padding: 2rem 1.5rem;
-      }
-
-      .skills {
-        flex-direction: column;
-        gap: 0.8rem;
-      }
-
-      .skill {
-        width: 100%;
-      }
-
-      .projects {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
 
   <header>
-    <div class="header-container">
+    <div class="header-container glass-panel">
       <a href="https://nivmizz7.me"><img src="assets/photo.jpg" alt="Photo de Nivmizz7" class="profile-photo"></a>
       <div class="header-info">
         <h1 data-fr="Nivmizz7" data-en="Nivmizz7">Nivmizz7</h1>
@@ -298,7 +30,7 @@
       <ul class="nav-links">
         <li><a href="#competences" data-fr="Compétences" data-en="Skills">Compétences</a></li>
         <li><a href="#projets" data-fr="Projets" data-en="Projects">Projets</a></li>
-        <li><a href="#github" data-fr="GitHub" data-en="GitHub">GitHub</a></li>
+        <li><a href="https://github.com/Nivmizz7" target="_blank" data-fr="GitHub" data-en="GitHub"><i class="fa-brands fa-github"></i> GitHub</a></li>
       </ul>
       <div class="lang-switch">
         <button id="fr" class="lang-btn active">FR</button>
@@ -307,54 +39,40 @@
     </nav>
   </header>
 
-  <section id="competences" class="section">
-    <h2 data-fr="Compétences" data-en="Skills">Compétences</h2>
+  <section id="competences" class="section glass-panel">
+    <div class="section-header">
+      <h2 data-fr="Compétences" data-en="Skills">Compétences</h2>
+      <div class="line"></div>
+    </div>
     <div class="skills">
-      <div class="skill">HTML / CSS / JS</div>
-      <div class="skill">Linux / Ubuntu</div>
-      <div class="skill">Container / Docker</div>
-      <div class="skill">VMWare ESXi / Proxmox</div>
-      <div class="skill">Git / GitHub</div>
+      <div class="skill"><i class="devicon-html5-plain colored"></i> HTML</div>
+      <div class="skill"><i class="devicon-css3-plain colored"></i> CSS</div>
+      <div class="skill"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
+      <div class="skill"><i class="devicon-linux-plain"></i> Linux</div>
+      <div class="skill"><i class="devicon-ubuntu-plain colored"></i> Ubuntu</div>
+      <div class="skill"><i class="devicon-docker-plain colored"></i> Docker</div>
+      <div class="skill"><i class="fas fa-server" style="color: #64748b;"></i> ESXi / Proxmox</div>
+      <div class="skill"><i class="devicon-git-plain colored"></i> Git</div>
+      <div class="skill"><i class="devicon-github-original"></i> GitHub</div>
+      <div class="skill"><i class="devicon-nodejs-plain colored"></i> Node.js</div>
     </div>
   </section>
 
-<section id="projets" class="section">
-  <h2 data-fr="Projets en cours" data-en="Current Projects">Projets en cours</h2>
-  <div class="projects">
-    <div class="project">
-      <h3>TarkovTracker-org</h3>
-      <p data-fr="Outil de suivi pour Escape From Tarkov avec suivi des quêtes et statistiques." data-en="Tracking tool for Escape From Tarkov with quest tracking and statistics.">Outil de suivi pour Escape From Tarkov avec suivi des quêtes et statistiques.</p>
-      <p><a href="https://github.com/TarkovTracker-org/TarkovTracker" target="_blank">GitHub</a> | <a href="https://tarkovtracker.org" target="_blank">Live</a></p>
+  <section id="projets" class="section glass-panel">
+    <div class="section-header">
+      <h2 data-fr="Projets & Dépôts" data-en="Projects & Repositories">Projets & Dépôts</h2>
+      <div class="line"></div>
     </div>
-  </div>
-</section>
+    <div class="projects" id="github-projects">
+      <div class="loading-spinner"><i class="fas fa-circle-notch"></i> <span data-fr="Chargement des projets..." data-en="Loading projects...">Chargement des projets...</span></div>
+    </div>
+  </section>
 
-<footer>
-  <p>© 2026 Nivmizz7 | <a href="https://github.com/Nivmizz7" target="_blank">GitHub</a></p>
-</footer>
+  <footer>
+    <p>© <span id="current-year"></span> Nivmizz7 | <a href="https://github.com/Nivmizz7" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></p>
+  </footer>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const frBtn = document.getElementById("fr");
-    const enBtn = document.getElementById("en");
-    const elements = document.querySelectorAll("[data-fr][data-en]");
-
-    function setLang(lang) {
-      elements.forEach(el => {
-        el.innerHTML = el.getAttribute(`data-${lang}`);
-      });
-      frBtn.classList.toggle("active", lang === "fr");
-      enBtn.classList.toggle("active", lang === "en");
-      localStorage.setItem("lang", lang);
-    }
-
-    const saved = localStorage.getItem("lang") || "fr";
-    setLang(saved);
-
-    frBtn.addEventListener("click", () => setLang("fr"));
-    enBtn.addEventListener("click", () => setLang("en"));
-  });
-</script>
+  <script src="assets/script.js"></script>
 
 </body>
 </html>
