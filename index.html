@@ -1,151 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nivmizz7</title>
-  <link rel="icon" href="assets/photo.jpg" type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>nivmizz7.me → nivmizz7.dev</title>
 
-  <!-- Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Poppins:wght@300;400;600&display=swap"
-    rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="2; url=https://nivmizz7.dev">
+    <link rel="canonical" href="https://nivmizz7.dev">
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-  <script src="script.js"></script>
-  <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0a0a0a;
+            --text: #ffffff;
+            --muted: #8a8a8a;
+            --border: rgba(255,255,255,.08);
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+                         "Segoe UI", sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 560px;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,.2);
+            transition: border-color .2s ease;
+        }
+
+        a:hover {
+            border-color: rgba(255,255,255,.8);
+        }
+
+        .line {
+            width: 64px;
+            height: 1px;
+            background: var(--border);
+            margin-bottom: 2rem;
+        }
+    </style>
+
+    <script>
+        setTimeout(() => {
+            window.location.replace("https://nivmizz7.dev");
+        }, 2000);
+    </script>
 </head>
-
 <body>
+    <main class="container">
+        <div class="line"></div>
 
-  <header>
-    <div class="header-container glass-panel">
-      <a href="https://nivmizz7.me"><img src="assets/photo.jpg" alt="Photo de Nivmizz7" class="profile-photo"></a>
-      <div class="header-info">
-        <h1>Nivmizz7</h1>
-        <p>Back-end Web Developer & Server Management and Maintenance</p>
-      </div>
-    </div>
+        <h1>nivmizz7.me</h1>
 
-    <nav class="nav-container">
-      <ul class="nav-links">
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="https://github.com/Nivmizz7" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section id="skills" class="section glass-panel">
-    <div class="section-header">
-      <h2>Skills</h2>
-      <div class="line"></div>
-    </div>
-    <div class="skills">
-      <div class="skill"><i class="devicon-html5-plain colored"></i> HTML</div>
-      <div class="skill"><i class="devicon-css3-plain colored"></i> CSS</div>
-      <div class="skill"><i class="devicon-javascript-plain colored"></i> JavaScript</div>
-      <div class="skill"><i class="devicon-typescript-plain colored"></i> TypeScript</div>
-      <div class="skill"><i class="devicon-vuejs-plain colored"></i> Vue.js</div>
-      <div class="skill"><i class="devicon-nodejs-plain colored"></i> Node.js</div>
-      <div class="skill"><i class="devicon-c-plain colored"></i> C</div>
-      <div class="skill"><i class="devicon-cplusplus-plain colored"></i> C++</div>
-      <div class="skill"><i class="devicon-csharp-plain colored"></i> C#</div>
-      <div class="skill"><i class="devicon-bash-plain"></i> Bash</div>
-      <div class="skill"><i class="devicon-linux-plain"></i> Linux</div>
-      <div class="skill"><i class="devicon-ubuntu-plain colored"></i> Ubuntu</div>
-      <div class="skill"><i class="devicon-nixos-plain colored"></i> Nix</div>
-      <div class="skill"><i class="devicon-docker-plain colored"></i> Docker</div>
-      <div class="skill"><i class="fas fa-server" style="color: #0095ff;"></i> VMware ESXi</div>
-      <div class="skill"><i class="devicon-proxmox-plain colored"></i> Proxmox VE</div>
-      <div class="skill"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</div>
-      <div class="skill"><i class="devicon-json-plain colored"></i> JSON</div>
-      <div class="skill"><i class="devicon-git-plain colored"></i> Git</div>
-      <div class="skill"><i class="devicon-github-original"></i> GitHub</div>
-    </div>
-  </section>
-
-  <section id="projects" class="section glass-panel">
-    <div class="section-header">
-      <h2>Projects</h2>
-      <div class="line"></div>
-    </div>
-    <div class="projects" id="github-projects">
-      <div class="project">
-        <h3><img src="assets/tarkovtracker-org.png" alt="TarkovTracker Logo"
-            style="width: 24px; vertical-align: middle; margin-right: 8px;"> TarkovTracker.org</h3>
-        <p>A comprehensive quest tracking and progression platform for Escape from Tarkov.</p>
-        <div class="project-tags">
-          <span class="tag"><i class="devicon-typescript-plain colored"></i> TypeScript</span>
-          <span class="tag"><i class="devicon-nuxtjs-plain colored"></i> Nuxt 4</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/TarkovTracker-org/tarkovtracker" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-github"></i> Code
-          </a>
-          <a href="https://tarkovtracker.org" target="_blank" rel="noopener noreferrer">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
-          </a>
-        </div>
-      </div>
-      <div class="project">
-        <h3><img src="assets/tarkovtracker-org.png" alt="TarkovTracker Logo"
-            style="width: 24px; vertical-align: middle; margin-right: 8px;"> Tarkov Data Overlay</h3>
-        <p>Overlay for Tarkov.dev API data.</p>
-        <div class="project-tags">
-          <span class="tag"><i class="devicon-json-plain colored"></i> JSON</span>
-          <span class="tag"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/TarkovTracker-org/tarkov-data-overlay" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-github"></i> Code
-          </a>
-        </div>
-      </div>
-      <div class="project">
-        <h3><img src="assets/tarkovtracker-org.png" alt="TarkovTracker Logo"
-            style="width: 24px; vertical-align: middle; margin-right: 8px;"> TrackerBot</h3>
-        <p>Discord bot for the TarkovTracker.org discord server.</p>
-        <div class="project-tags">
-          <span class="tag"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/TarkovTracker-org/trackerbot" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-github"></i> Code
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="section glass-panel">
-    <div class="section-header">
-      <h2>Contact</h2>
-      <div class="line"></div>
-    </div>
-    <div class="contact-info" style="text-align: center; font-size: 1.2rem; margin-top: 20px;">
-      <p style="margin-bottom: 15px;">
-        <i class="fa-solid fa-envelope" style="color: #64748b; margin-right: 10px;"></i>
-        <a href="mailto:niv@nivmizz7.dev"
-          style="color: var(--text-color); text-decoration: none; font-weight: 500;">niv@nivmizz7.dev</a>
-      </p>
-      <p>
-        <i class="fa-brands fa-discord" style="color: #5865F2; margin-right: 10px;"></i>
-        <a href="https://discord.gg/PpdDwd2M6V" target="_blank" rel="noopener noreferrer"
-          style="color: var(--text-color); text-decoration: none; font-weight: 500;">Join the Discord Server</a>
-      </p>
-    </div>
-  </section>
-
-  <footer>
-    <p>© <span id="current-year"></span> Nivmizz7 | <a href="https://github.com/Nivmizz7" target="_blank"><i
-          class="fa-brands fa-github"></i> GitHub</a></p>
-  </footer>
-
+        <p>
+            Ce domaine redirige désormais vers
+            <a href="https://nivmizz7.dev">nivmizz7.dev</a>.
+        </p>
+    </main>
 </body>
-
 </html>
